@@ -2,9 +2,9 @@
 document.getElementById('btn-login').addEventListener('click', function () {
     // console.log ('clicked on  the button');
     // Get the phone number 
-    const phoneNumber = document.getElementById('phone').value;
+    const phoneNumber = getInputFieldValueById('phone');
     // Get the pin number 
-    const pinNumber = document.getElementById('pin').value;
+    const pinNumber = getInputFieldValueById('pin');
     // console.log(phoneNumber,pinNumber);
     
     // Validate in Fokira Way 
