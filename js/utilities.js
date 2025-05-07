@@ -12,6 +12,7 @@ function getInputTextById (id){
 function showSectionById (id){
     document.getElementById('add-money-field').classList.add('hidden');
     document.getElementById('cash-out-field').classList.add('hidden');
+    document.getElementById('transaction-container').classList.add('hidden');
     // Show the section with parameter ID 
     return     document.getElementById(id).classList.remove('hidden');
 }

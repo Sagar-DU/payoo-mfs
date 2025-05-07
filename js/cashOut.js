@@ -4,6 +4,13 @@ document.getElementById('btn-cashout-money').addEventListener('click', function 
     const moneyAmount = getInputFieldValueById('money-amount-cashout');
     // Get Pin 
     const pinNumber = getInputFieldValueById('pin-number-cashout');
+     // Validate Money 
+     if (isNaN(parseFloat(moneyAmount))){
+        alert ("Transaction faild.");
+        document.getElementById('money-amount-cashout').value = '';
+        document.getElementById('pin-number-cashout').value = '';
+        return 0;
+    }
     // Validate pin 
     if (pinNumber === '1234') {
         // Get Balance 
@@ -11,16 +18,22 @@ document.getElementById('btn-cashout-money').addEventListener('click', function 
         // Add the money with input amount make sure to change their type
         const newBalance = parseFloat(balance) - parseFloat(moneyAmount);
         // Update balance 
-        document.getElementById ('balance-amount').innerText = newBalance;
+        document.getElementById('balance-amount').innerText = newBalance;
+
+        // Add Transaction History
+        const p = document.createElement('p');
+        p.innerText = `Cashout: ${moneyAmount}. New Balance; ${newBalance}`;
+        document.getElementById('transaction-container').appendChild(p);
+
         // Clear input fields 
-        document.getElementById ('money-amount-cashout').value = '';
-        document.getElementById ('pin-number-cashout').value = '';
+        document.getElementById('money-amount-cashout').value = '';
+        document.getElementById('pin-number-cashout').value = '';
     }
     else {
         // Message incase of pin miss match 
         alert('Faild to Cash Out. Try again!')
         // Clear input fields 
-        document.getElementById ('money-amount-cashout').value = '';
-        document.getElementById ('pin-number-cashout').value = '';
+        document.getElementById('money-amount-cashout').value = '';
+        document.getElementById('pin-number-cashout').value = '';
     }
 })

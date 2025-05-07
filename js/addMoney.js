@@ -4,6 +4,13 @@ document.getElementById('btn-add-money').addEventListener('click', function () {
     const moneyAmount = getInputFieldValueById('money-amount');
     // Get Pin 
     const pinNumber = getInputFieldValueById('pin-number');
+    // Validate Money 
+    if (isNaN(parseFloat(moneyAmount))){
+        alert ("Transaction faild.");
+        document.getElementById ('money-amount').value = '';
+        document.getElementById ('pin-number').value = '';
+        return 0;
+    }
     // Validate pin 
     if (pinNumber === '1234') {
         // Get Balance 
@@ -12,6 +19,12 @@ document.getElementById('btn-add-money').addEventListener('click', function () {
         const newBalance = parseFloat(balance) + parseFloat(moneyAmount);
         // Update balance 
         document.getElementById ('balance-amount').innerText = newBalance;
+
+        // Add Transaction History
+        const p =document.createElement('p');
+        p.innerText = `Added: ${moneyAmount}. New Balance; ${newBalance}`;
+        document.getElementById('transaction-container').appendChild(p);
+
         // Clear input fields 
         document.getElementById ('money-amount').value = '';
         document.getElementById ('pin-number').value = '';
