@@ -1,13 +1,13 @@
 // Add Money to the account
 document.getElementById('btn-add-money').addEventListener('click', function () {
     // Get The Money 
-    const moneyAmount = document.getElementById('money-amount').value;
+    const moneyAmount = getInputFieldValueById('money-amount');
     // Get Pin 
-    const pinNumber = document.getElementById('pin-number').value;
+    const pinNumber = getInputFieldValueById('pin-number');
     // Validate pin 
     if (pinNumber === '1234') {
         // Get Balance 
-        const balance = document.getElementById('balance-amount').innerText;
+        const balance = getInputTextById('balance-amount');
         // Add the money with input amount make sure to change their type
         const newBalance = parseFloat(balance) + parseFloat(moneyAmount);
         // Update balance 
