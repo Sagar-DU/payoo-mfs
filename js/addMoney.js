@@ -32,5 +32,7 @@ document.getElementById('btn-add-money').addEventListener('click', function () {
     else {
         // Message incase of pin miss match 
         alert('Faild to add money. Try again!')
+        document.getElementById ('money-amount').value = '';
+        document.getElementById ('pin-number').value = '';
     }
 })
