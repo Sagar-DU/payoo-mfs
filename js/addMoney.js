@@ -5,7 +5,7 @@ document.getElementById('btn-add-money').addEventListener('click', function () {
     // Get Pin 
     const pinNumber = getInputFieldValueById('pin-number');
     // Validate Money 
-    if (isNaN(parseFloat(moneyAmount))){
+    if (isNaN(parseFloat(moneyAmount)) || parseFloat(moneyAmount) < 0){
         alert ("Transaction faild.");
         document.getElementById ('money-amount').value = '';
         document.getElementById ('pin-number').value = '';

@@ -5,7 +5,7 @@ document.getElementById('btn-cashout-money').addEventListener('click', function 
     // Get Pin 
     const pinNumber = getInputFieldValueById('pin-number-cashout');
      // Validate Money 
-     if (isNaN(parseFloat(moneyAmount))){
+     if (isNaN(parseFloat(moneyAmount)) || parseFloat(moneyAmount) < 0){
         alert ("Transaction faild.");
         document.getElementById('money-amount-cashout').value = '';
         document.getElementById('pin-number-cashout').value = '';
@@ -17,6 +17,11 @@ document.getElementById('btn-cashout-money').addEventListener('click', function 
         const balance = getInputTextById('balance-amount');
         // Add the money with input amount make sure to change their type
         const newBalance = parseFloat(balance) - parseFloat(moneyAmount);
+        // Validate 2
+        if (newBalance < 0){
+            alert ('You do not have enough balance.');
+            return 0;
+        }
         // Update balance 
         document.getElementById('balance-amount').innerText = newBalance;
 
