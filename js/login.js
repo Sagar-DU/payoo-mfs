@@ -9,7 +9,7 @@ document.getElementById('btn-login').addEventListener('click', function () {
     
     // Validate in Fokira Way 
     if (phoneNumber === '5' && pinNumber === '1234'){
-        window.location.href = '/home.html'
+        window.location.href = '/home.html';
     }
     else {
         alert ('Wrong Number or Pin')

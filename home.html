@@ -1,11 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payoo Home</title>
+    <title>Payoo MFS</title>
+
+    <!-- Daisyui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+
 <body>
-    <h1>Welcome to Payoo</h1>
+    <main class="flex justify-center">
+        <div class="mockup-phone max-md:w-full">
+            <div class="mockup-phone-display text-black grid place-content-center bg-gray-100 max-sm:w-full">
+                <!-- Balance -->
+                <div class="stats shadow">
+                    <div class="stat bg-white">
+                      <div class="stat-value">89400</div>
+                      <div class="stat-desc">Availabe Balance</div>
+                    </div>
+                  </div>
+                  <div class="divider"></div>
+                  <!-- User Action -->
+                   <div>
+                    <button class="btn btn-xl">Add Money</button>
+                    <button class="btn btn-xl">Cash Out</button>
+                   </div>
+                   <div class="divider"></div>
+                   <!-- Action  -->
+                   <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                    <div class="card-body">
+                      <fieldset class="fieldset">
+                        <label class="label">Amount</label>
+                        <input type="text" class="input" placeholder="Amount" />
+                        <label class="label">Pin</label>
+                        <input type="pin" class="input" required autocomplete="off" placeholder="Pin" />
+                        <button class="btn btn-primary mt-4">Add Money</button>
+                      </fieldset>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+    </main>
+<!-- JavaScript -->
+ <script src="js/home.js"></script>
 </body>
+
 </html>
