@@ -7,3 +7,11 @@ function getInputFieldValueById (id){
 function getInputTextById (id){
     return document.getElementById(id).innerText;
 }
+
+// Get section by ID 
+function showSectionById (id){
+    document.getElementById('add-money-field').classList.add('hidden');
+    document.getElementById('cash-out-field').classList.add('hidden');
+    // Show the section with parameter ID 
+    return     document.getElementById(id).classList.remove('hidden');
+}
